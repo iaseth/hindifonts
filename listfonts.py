@@ -1,8 +1,10 @@
 import os
 
 FONT_FILE_EXTENSIONS = ["ttf", "otf"]
+
 user_font_dirpath = os.path.expanduser("~/.local/share/fonts")
 system_font_dirpath = os.path.expanduser("/usr/share/fonts")
+
 
 def get_font_filepaths(dirpath):
 	entry_paths = [os.path.join(dirpath, f) for f in os.listdir(dirpath)]
@@ -13,6 +15,7 @@ def get_font_filepaths(dirpath):
 
 	font_filepaths = [f for f in filepaths if f.split(".")[-1] in FONT_FILE_EXTENSIONS]
 	return font_filepaths
+
 
 def main():
 	user_font_filepaths = get_font_filepaths(user_font_dirpath)
